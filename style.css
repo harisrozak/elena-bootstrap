@@ -1,0 +1,53 @@
+/**
+ * Theme Name: Elena Bootstrap
+ * Theme URI: 
+ * Description: Elena Bootstrap is an ultimate responsive WordPres theme based on Bootstrap, from Twitter. Sleek, clean and mobile friendly.
+ * Author: Haris
+ * Author URI: harisrozak@gmail.com
+ * Version: 0.1.9
+ * Tags: bootstrap, accessibility-ready, custom-background, custom-header, editor-style, fluid-layout, full-width-template, left-sidebar, one-column, post-formats, responsive-layout, right-sidebar, rtl-language-support, sticky-post, threaded-comments, translation-ready, two-columns
+ * 
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * 
+ * Copyright Haris Ainur Rozak
+ */
+
+article {
+	padding: 0 0 50px;
+	margin: 0 0 50px;
+	border-bottom: 1px solid #EEE;
+}
+
+footer.site-footer {
+    background-color: #2A2730;
+    color: #99979C;
+    padding: 50px 0;
+    margin: 100px 0 0;
+}
+
+footer.site-footer a {
+    color: #FFF;
+}
+
+footer.site-footer p {
+	margin: 0px;
+}
+
+footer.site-footer .footer-navigation ul {
+	list-style: outside none none;
+	padding: 0px;
+	margin: 0px 0px 20px;
+}
+
+footer.site-footer .footer-navigation ul li {
+	display: inline-block;	
+}
+
+footer.site-footer .footer-navigation ul li + li {
+	margin-left: 15px;
+}
+
+.navbar {
+	margin-bottom: 40px;
+}
