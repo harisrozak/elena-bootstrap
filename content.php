@@ -27,25 +27,32 @@
 
 		<?php elena_theme_entry_header_meta(); ?>
 	</header><!-- .entry-header -->
-
+	
+	<?php if ( is_single() || is_page() ) : ?>
 	<div class="entry-content">
 		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s', 'twentyfifteen' ),
-				the_title( '<span class="screen-reader-text">', '</span>', false )
-			) );
+			the_content();
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfifteen' ) . '</span>',
+			wp_link_pages(array(
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'elena' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>%',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'elena' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
+			));
 		?>
 	</div><!-- .entry-content -->
+	
+	<?php else : ?>
+	
+	<div class="entry-summary">
+		<?php
+			the_excerpt(); 
+		?>
+	</div><!-- .entry-summary -->
+	
+	<?php endif; ?>
 
 	<?php
 		// Author bio.
@@ -55,8 +62,13 @@
 	?>
 
 	<footer class="entry-footer">
-		<?php elena_theme_entry_footer_meta(); ?>
-		<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php 
+			elena_theme_entry_footer_meta(); 
+			
+			printf('<span><a href="%1$s">%2$s</a></span>',
+				get_edit_post_link(), _x( 'Edit Post', 'elena' )
+			);
+		?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

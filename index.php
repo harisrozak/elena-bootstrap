@@ -18,7 +18,7 @@ get_header(); ?>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-9 content-area">
+            <div class="col-md-8 content-area">
                 <main id="main" class="site-main" role="main">
 
                 <?php if ( have_posts() ) : ?>
@@ -44,23 +44,18 @@ get_header(); ?>
                     endwhile;
 
                     // Previous/next page navigation.
-                    the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-                        'next_text'          => __( 'Next page', 'twentyfifteen' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-                    ) );
+                    elena_posts_pagination();
 
                 // If no content, include the "No posts found" template.
                 else :
-                    get_template_part( 'content', 'none' );
-
+                    get_template_part('content', 'none');
                 endif;
                 ?>
 
                 </main><!-- .site-main -->
             </div><!-- .content-area -->
-            <div class="col-md-3 sidebar-area">
-                
+            <div class="col-md-4 sidebar-area">
+                <?php elena_print_widget('sidebar-1', 'right-sidebar') ?>
             </div><!-- .sidebar-area -->
         </div><!-- .row -->
     </div><!-- .content-area -->

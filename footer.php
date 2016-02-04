@@ -29,7 +29,7 @@
 				&copy; <?php echo date("Y") . ' '; bloginfo( 'name' ); ?>.			
 				<?php esc_attr_e( 'Proudly powered by ', 'elena' ); ?>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'elena' ) ); ?>" class="site-generator" title="WordPress">WordPress</a> &amp; 
-				<a href="<?php echo esc_url( 'http://#' ); ?>" class="site-webdesign" title="Krusze Theme">Elena Theme</a>.
+				<a href="<?php echo esc_url( 'http://#' ); ?>" class="site-webdesign" title="Elena Themes">Elena Themes</a>.
 			</p>
 		</div>	
 	</div><!-- .site-info -->
