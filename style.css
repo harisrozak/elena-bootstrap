@@ -39,6 +39,30 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.header-navigation {
+	margin: 30px 0px;
+}
+
+.header-navigation .site-title {	
+	font-size: 42px;
+}
+
+.header-navigation .site-description {
+	margin-left: 2px;
+}
+
+.aligncenter {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     height: 1px;
@@ -53,17 +77,25 @@ a:hover, a:focus {
 	line-height: 1.65;
 }
 
-.entry-content, .entry-summary, 
-.entry-summary a.excerpt-more {
-	display: inline-block;
+.entry-content, .entry-summary {
+	display: block;
 	margin: 10px 0;
 	font-size: 16px;
-	color: #707070;
+	color: #333;
 }
 
-.entry-content, .entry-summary, 
+.entry-summary a.excerpt-more {
+	display: inline-block;
+	font-size: 14px;
+	margin: 10px 0;
+	color: #707070;
+	background: none;
+	padding: 9px 15px;
+}
+
 .entry-summary a.excerpt-more:hover {
-	color: #333;
+	color: #337ab7;
+	border-color: #337ab7;
 }
 
 .navbar {
@@ -129,7 +161,7 @@ footer.site-footer .footer-navigation ul {
 }
 
 footer.site-footer .footer-navigation ul li {
-	display: inline-block;	
+	display: inline-block;		
 }
 
 footer.site-footer .footer-navigation ul li ul {
@@ -148,6 +180,9 @@ footer.site-footer .footer-navigation ul li + li {
 
 .sidebar-area .widget-area .widget ul > li + li {
 	padding-top: 5px;
+	/*border-bottom: 1px solid rgb(238, 238, 238);
+	margin-bottom: 10px;
+	padding-bottom: 10px;*/
 }
 
 .sidebar-area .widget-area .widget ul > li ul {
@@ -160,7 +195,8 @@ footer.site-footer .footer-navigation ul li + li {
 }
 
 .sidebar-area .widget-area .widget .widget-title {
-	font-size: 20px;
+	font-size: 16px;
+	text-transform: uppercase;
 }
 
 /* inline search widget */
@@ -227,7 +263,7 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
 .pagination a.prev.page-numbers:focus,
 .pagination a.next.page-numbers:hover,
 .pagination a.next.page-numbers:focus {
-	color: #2A2730;
+	color: #337ab7;
 }
 .pagination a.prev.page-numbers {
 	padding-left: 0;
@@ -240,7 +276,7 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
 .pagination span.page-numbers.dots {
 	background-color: transparent;
 	border: none;
-	color: #AAA;
+	color: #CCC;
 	float: left;
   	font-size: 14px;
 	line-height: normal;
@@ -251,7 +287,7 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
   	padding-top: 9px;
 	position: relative;
 	text-decoration: none;
-  	border: 1px solid #DDD;
+  	border: 1px solid #CCC;
   	background: #FFF;
   	border-radius: 2px;
   	-moz-border-radius: 2px;
@@ -259,7 +295,7 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
 }
 .pagination a.prev.page-numbers,
 .pagination a.next.page-numbers {
-	color: #AAA;
+	color: #CCC;
 	font-size: 24px;
 	font-weight: bold;
 	line-height: normal;
@@ -269,7 +305,7 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
 }
 .pagination span.page-numbers.current,
 .pagination span.page-numbers.dots {
-	border: 1px solid #DDD;
+	border: 1px solid #CCC;
 	float: left;
 	line-height: normal;  
 	position: relative;
@@ -283,20 +319,20 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
 .pagination span:hover,
 .pagination a:focus,
 .pagination span:focus {
-	border-color: #2A2730;
-	color: #2A2730;
+	border-color: #337ab7;
+	color: #337ab7;
 }
 .pagination span.page-numbers.current,
 .pagination span.page-numbers.current:hover,
 .pagination span.page-numbers.current:focus {
-	border-color: #2A2730;
-	color: #2A2730;
+	border-color: #337ab7;
+	color: #337ab7;
 	cursor: default;
 	font-weight: bold;
 	z-index: 2;
 }
 
-/* navigation bar collapse */
+/* navigation bar - navbar */
 .navbar-collapse ul.navbar-nav .sub-menu {
     border-radius: 0px 0px 4px 4px;
 	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
@@ -387,8 +423,31 @@ table#wp-calendar > tbody > tr:nth-of-type(2n+1) {
 	right: auto;
 }
 
+/* navbar inverse */
+.navbar-inverse .navbar-collapse ul.navbar-nav > li > .sub-menu {
+	border-top-color: #101010;
+}
+.navbar-inverse .navbar-collapse ul.navbar-nav > li.menu-item-has-children:hover::after {
+	color: #FFF;
+}
+
+/* navbar-type-default */
+.navbar-type-default .navbar-left {
+	margin-left: -15px;
+}
+
 @media screen and (min-width: 992px) {
 	.right-sidebar {
 		padding-left: 30px;
+	}
+}
+
+/* wp's admin-bar */
+body.admin-bar .navbar.navbar-fixed-top {
+	top: 32px;
+}
+@media screen and (max-width: 782px) {
+	body.admin-bar .navbar.navbar-fixed-top {
+		top: 46px;
 	}
 }

@@ -23,45 +23,16 @@
 
 <body <?php body_class(); ?>>
 
-<!-- Static navbar -->
-<nav class="navbar navbar-default navbar-static-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		  	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-		  		<?php bloginfo( 'name' ); ?>
-		  	</a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<?php 
-				// Header First Navigation
-				wp_nav_menu( 
-					array( 						
-						'theme_location' => 'header-first-navigation',
-						'container' => false, 
-						'menu_class' => 'nav navbar-nav',
-						'fallback_cb' => false 
-					) 
-				); 
-			?>
+<?php 
+$navbar_type = get_theme_mod('elena_header_type','navbar-static-top');
 
-			<?php 
-				// Header Second Navigation
-				wp_nav_menu( 
-					array( 						
-						'theme_location' => 'header-second-navigation',
-						'container' => false, 
-						'menu_class' => 'nav navbar-nav navbar-right',
-						'fallback_cb' => false 
-					) 
-				); 
-			?>
-		</div><!--/.nav-collapse -->
-	</div>
-</nav>
-
+if($navbar_type == 'navbar-fixed-top') {
+	get_template_part('navbar','fixed');
+}
+else if($navbar_type == 'navbar-static-top') {
+	get_template_part('navbar','static');
+}
+else { // navbar-type-default
+	get_template_part('navbar','default');
+}
+?>

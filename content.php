@@ -11,10 +11,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		// Post thumbnail.
-		elena_theme_post_thumbnail();
-	?>
+
+	<?php elena_template_tags::post_thumbnail(); ?>
 
 	<header class="entry-header">
 		<?php
@@ -25,7 +23,7 @@
 			endif;
 		?>
 
-		<?php elena_theme_entry_header_meta(); ?>
+		<?php elena_template_tags::entry_header_meta(); ?>
 	</header><!-- .entry-header -->
 	
 	<?php if ( is_single() || is_page() ) : ?>
@@ -63,7 +61,7 @@
 
 	<footer class="entry-footer">
 		<?php 
-			elena_theme_entry_footer_meta(); 
+			elena_template_tags::entry_footer_meta(); 
 			
 			printf('<span><a href="%1$s">%2$s</a></span>',
 				get_edit_post_link(), _x( 'Edit Post', 'elena' )

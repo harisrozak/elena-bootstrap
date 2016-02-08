@@ -44,7 +44,7 @@ get_header(); ?>
                     endwhile;
 
                     // Previous/next page navigation.
-                    elena_posts_pagination();
+                    elena_template_tags::posts_pagination();
 
                 // If no content, include the "No posts found" template.
                 else :
@@ -55,7 +55,7 @@ get_header(); ?>
                 </main><!-- .site-main -->
             </div><!-- .content-area -->
             <div class="col-md-4 sidebar-area">
-                <?php elena_print_widget('sidebar-1', 'right-sidebar') ?>
+                <?php elena_template_tags::print_widget('sidebar-1', 'right-sidebar') ?>
             </div><!-- .sidebar-area -->
         </div><!-- .row -->
     </div><!-- .content-area -->

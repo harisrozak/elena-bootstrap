@@ -11,6 +11,7 @@
 define('ELENA_VERSION', '0.1.9');
 
 require(get_template_directory() . '/inc/template-tags.php');
+require(get_template_directory() . '/inc/customizer.php');
 
 // load css and javascript files
 add_action('wp_enqueue_scripts', 'elena_theme_enqueue_scripts_and_styles');
