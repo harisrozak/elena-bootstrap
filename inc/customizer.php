@@ -54,5 +54,14 @@ function elena_customize_register($wp_customize)
 				'navbar-inverse' => esc_html__( 'Inverse', 'elena' )
 			),
 		)
-	);	
+	);
+
+	// Header Logo
+	$wp_customize->add_setting( 'elena_header_logo' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'elena_header_logo', array(
+        'label' => __( 'Header Logo', 'elena' ),
+        'description' => __( 'Working only on header type <b>Default</b>', 'elena' ),
+        'section' => 'elena_header',
+        'settings' => 'elena_header_logo',
+    )));
 }

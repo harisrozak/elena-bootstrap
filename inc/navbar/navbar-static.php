@@ -12,7 +12,7 @@
 		  	</a>
 		</div>
 		
-		<?php get_template_part('navbar') ?>
+		<?php get_template_part('inc/navbar/navbar') ?>
 		
 	</div>
 </nav>

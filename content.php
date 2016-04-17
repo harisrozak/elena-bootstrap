@@ -5,8 +5,7 @@
  * Used for both single and index/archive/search.
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage Elena
  */
 ?>
 
@@ -21,12 +20,13 @@
 			else :
 				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 			endif;
+		
+			elena_template_tags::entry_header_meta();
 		?>
-
-		<?php elena_template_tags::entry_header_meta(); ?>
 	</header><!-- .entry-header -->
 	
 	<?php if ( is_single() || is_page() ) : ?>
+
 	<div class="entry-content">
 		<?php
 			the_content();
@@ -45,19 +45,10 @@
 	<?php else : ?>
 	
 	<div class="entry-summary">
-		<?php
-			the_excerpt(); 
-		?>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	
 	<?php endif; ?>
-
-	<?php
-		// Author bio.
-		if ( is_single() && get_the_author_meta( 'description' ) ) :
-			get_template_part( 'author-bio' );
-		endif;
-	?>
 
 	<footer class="entry-footer">
 		<?php 

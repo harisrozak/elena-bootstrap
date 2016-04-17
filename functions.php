@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
@@ -17,6 +17,9 @@ require(get_template_directory() . '/inc/customizer.php');
 add_action('wp_enqueue_scripts', 'elena_theme_enqueue_scripts_and_styles');
 function elena_theme_enqueue_scripts_and_styles() 
 {
+	// jQuery
+	wp_enqueue_script('jquery');	
+
 	// bootstrap
 	wp_enqueue_style('elena-bootstrap', get_template_directory_uri() . '/inc/bootstrap/css/bootstrap.min.css', array(), ELENA_VERSION);
 	wp_enqueue_script('elena-bootstrap', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array(), ELENA_VERSION, true);
@@ -32,7 +35,7 @@ function elena_theme_enqueue_scripts_and_styles()
 add_action('after_setup_theme', 'elena_theme_setup');
 function elena_theme_setup()
 {
-	/*
+	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on twentyfifteen, use a find and replace
@@ -51,7 +54,20 @@ function elena_theme_setup()
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
+	/**
+	 * Enable support for custom background.
+	 *
+	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
+	 */
+	add_theme_support( 'custom-background', array(
+		'default-color'          => '',
+		'default-image'          => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => ''
+	));
+
+	/**
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -60,8 +76,8 @@ function elena_theme_setup()
 
 	// Add support for a navigation menu.
 	register_nav_menus( array(
-		'header-first-navigation' => __( 'Header First Navigation', 'elena' ),
-		'header-second-navigation' => __( 'Header Second Navigation', 'elena' ),
+		'header-left-navigation' => __( 'Header Left Navigation', 'elena' ),
+		'header-right-navigation' => __( 'Header Right Navigation', 'elena' ),
 		'footer-navigation' => __( 'Footer Navigation', 'elena' )
 	) );
 }

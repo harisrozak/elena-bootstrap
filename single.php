@@ -1,13 +1,9 @@
 <?php
 /**
- * The main template file
+ * Single Post Template
+ * This template is used when a single post page is shown.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * e.g., it puts together the home page when no home.php file exists.
- *
- * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
  * @subpackage Elena
@@ -42,8 +38,15 @@ get_header(); ?>
                 // End the loop.
                 endwhile;
 
-                // Previous/next page navigation.
-                elena_template_tags::posts_pagination();
+                // Author bio.
+                if ( get_the_author_meta( 'description' ) ) :
+                    get_template_part( 'author-bio' );
+                endif;
+
+                // Load the comment template if comments are open or there is at least one comment.
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
 
             // If no content, include the "No posts found" template.
             else :

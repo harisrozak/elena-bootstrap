@@ -26,13 +26,17 @@
 <?php 
 $navbar_type = get_theme_mod('elena_header_type','navbar-static-top');
 
-if($navbar_type == 'navbar-fixed-top') {
-	get_template_part('navbar','fixed');
-}
-else if($navbar_type == 'navbar-static-top') {
-	get_template_part('navbar','static');
-}
-else { // navbar-type-default
-	get_template_part('navbar','default');
+switch ($navbar_type) {
+	case 'navbar-fixed-top':
+		get_template_part('inc/navbar/navbar','fixed');
+		break;
+
+	case 'navbar-static-top':
+		get_template_part('inc/navbar/navbar','static');
+		break;
+	
+	default:
+		get_template_part('inc/navbar/navbar','default');
+		break;
 }
 ?>
