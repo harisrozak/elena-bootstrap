@@ -13,6 +13,68 @@
  * Copyright Haris Ainur Rozak
  */
 
+.bootstrap-btn,
+.bootstrap-btn-sm,
+.comment-list .reply a,
+.comment-form input.submit {
+	/* btn */
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	
+	/* btn-default */
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;	
+}
+
+.bootstrap-btn:hover,
+.bootstrap-btn-sm:hover,
+.comment-list .reply a:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.bootstrap-btn,
+.bootstrap-btn-sm,
+.comment-list .reply a {
+	padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.bootstrap-btn-primary,
+.comment-form input.submit {
+	color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.bootstrap-btn-primary:hover,
+.comment-form input.submit:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
 body {
 	font-family: 'Open Sans', Arial, Sans-Serif;
 }
@@ -590,61 +652,37 @@ body.admin-bar .navbar.navbar-fixed-top {
 	margin-top: 15px;
 }
 
-/* Bootstrap button class */
-.bootstrap-btn-sm,
-.comment-list .reply a {
-	/* btn */
-	display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
+.comment-form p > label {
+	display: block;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-	
-	/* btn-default */
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
-
-	/* btn-sm */
-	padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
+    margin: 20px 0 5px 0;
+    text-transform: uppercase;
+    color: #707070;
 }
 
-.bootstrap-btn-sm:hover,
-.comment-list .reply a:hover {
-    color: #333;
-    background-color: #e6e6e6;
-    border-color: #adadad;
+.comment-form p input[type="text"], 
+.comment-form p textarea {
+	border: 1px solid #cccccc;
+	background-color: #eee;
+	width: 100%;	
+	padding: 10px;
 }
 
-.bootstrap-btn-primary {
-	color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+.comment-form p input[type="text"]:focus, 
+.comment-form p textarea:focus {
+	border: 1px solid #dadada;
+	background-color: #fcfcfc;
+	outline: none;
 }
 
-.bootstrap-btn-primary:hover {
-    color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
+.comment-form p textarea {
+	min-height: 250px;
 }
 
+.comment-form input.submit {
+	margin-top: 20px;
+	font-size: 16px;
+}
 
 /* WordPress Reqired Styles
    ========================================================================== */
