@@ -652,6 +652,10 @@ body.admin-bar .navbar.navbar-fixed-top {
 	margin-top: 15px;
 }
 
+.comment-form {
+	margin-bottom: 50px;
+}
+
 .comment-form p > label {
 	display: block;
     font-size: 14px;

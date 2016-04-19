@@ -23,7 +23,8 @@ function elena_customize_register($wp_customize)
 	
 	// Header Type
 	$wp_customize->add_setting( 'elena_header_type', array(
-		'default' => 'navbar-static-top'
+		'default' => 'navbar-static-top',
+		'sanitize_callback' => 'sanitize_text_field',
 	));	 
 	$wp_customize->add_control(
 		'elena_header_type',
@@ -41,7 +42,8 @@ function elena_customize_register($wp_customize)
 
 	// Header Color
 	$wp_customize->add_setting( 'elena_header_color', array(
-		'default' 		=> 'navbar-default'
+		'default' 		=> 'navbar-default',
+		'sanitize_callback' => 'sanitize_text_field',
 	));	 
 	$wp_customize->add_control(
 		'elena_header_color',
@@ -57,7 +59,9 @@ function elena_customize_register($wp_customize)
 	);
 
 	// Header Logo
-	$wp_customize->add_setting( 'elena_header_logo' );
+	$wp_customize->add_setting( 'elena_header_logo', array(
+		'sanitize_callback' => 'sanitize_text_field'
+	));
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'elena_header_logo', array(
         'label' => __( 'Header Logo', 'elena' ),
         'description' => __( 'Working only on header type <b>Default</b>', 'elena' ),

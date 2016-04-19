@@ -81,7 +81,7 @@ Class elena_template_tags
 			);
 		}
 
-		if(! is_single() && ! post_password_required() && (comments_open() || get_comments_number()))
+		if(! is_page() && ! post_password_required() && (comments_open() || get_comments_number()))
 		{
 			echo '<span class="comments-link">';
 			echo '<span class="comments-link-divider">&ndash;</span>';

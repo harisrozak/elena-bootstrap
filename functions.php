@@ -27,6 +27,9 @@ function elena_theme_enqueue_scripts_and_styles()
 	// open-sans fonts
 	wp_enqueue_style('elena-open-sans', get_template_directory_uri() . '/fonts/open-sans/stylesheet.css', array(), ELENA_VERSION);
 
+	// wordpress comment-reply
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
 	// main style.css
 	wp_enqueue_style( 'elena-style', get_stylesheet_uri() );
 }
@@ -80,6 +83,16 @@ function elena_theme_setup()
 		'header-right-navigation' => __( 'Header Right Navigation', 'elena' ),
 		'footer-navigation' => __( 'Footer Navigation', 'elena' )
 	) );
+
+	/**
+	 * Set the content width
+	 *
+	 * https://codex.wordpress.org/Content_Width
+	 */
+	global $content_width; 
+	if ( ! isset( $content_width ) ) { 
+		$content_width = 780;
+	}	
 }
 
 // Replaces the excerpt "more" text by a link
