@@ -140,10 +140,10 @@ Class elena_template_tags
 		}
 
 		if ( $all_the_cool_cats > 1 ) {
-			// This blog has more than 1 category so twentyfifteen_categorized_blog should return true.
+			// This blog has more than 1 category so categorized_blog should return true.
 			return true;
 		} else {
-			// This blog has only 1 category so twentyfifteen_categorized_blog should return false.
+			// This blog has only 1 category so categorized_blog should return false.
 			return false;
 		}
 	}

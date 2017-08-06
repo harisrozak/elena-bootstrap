@@ -55,7 +55,7 @@
 			elena_template_tags::entry_footer_meta(); 
 			
 			printf('<span><a href="%1$s">%2$s</a></span>',
-				get_edit_post_link(), _x( 'Edit Post', 'elena' )
+				get_edit_post_link(), __( 'Edit Post', 'elena' )
 			);
 		?>
 	</footer><!-- .entry-footer -->
