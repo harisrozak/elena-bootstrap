@@ -15,15 +15,15 @@ Elena Bootstrap is an ultimate responsive WordPres theme based on Bootstrap, fro
 Manual installation:
 
 1. Download Elena Bootstrap theme from [Themes Directory] (http://wordpress.org/themes)
-1. Unzip and upload the `elena-bootstrap` folder to the `/wp-content/themes/` directory
-1. Activate the Theme through the 'Themes' menu in WordPress
+2. Unzip and upload the `elena-bootstrap` folder to the `/wp-content/themes/` directory
+3. Activate the Theme through the 'Themes' menu in WordPress
 
 Installation using "Add New Theme":
 
 1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-1. Search for 'Elena Bootstrap'
-1. Click the 'Install' button to open the theme's repository listing
-1. Activate the Theme
+2. Search for 'Elena Bootstrap'
+3. Click the 'Install' button to open the theme's repository listing
+4. Activate the Theme
 
 == Frequently Asked Questions ==
 
